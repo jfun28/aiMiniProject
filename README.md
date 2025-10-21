@@ -111,6 +111,6 @@ ev-market-analysis/
 
 ## Contributors
 
-- **정재민민** - Prompt Engineering, Agent Design, Graph Architecture
+- **정재민** - Prompt Engineering, Agent Design, Graph Architecture
 
 
