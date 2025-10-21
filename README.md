@@ -62,7 +62,8 @@ class SupervisedState(TypedDict):
 
 ## Architecture
 
-![alt text](<전기차 flow_v0.1.png>)
+![Uploading 전기차 flow_v0.1.png…]()
+
 
 ### Workflow 설명
 
