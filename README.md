@@ -61,7 +61,7 @@ class SupervisedState(TypedDict):
 ```
 
 ## Architecture
-<img width="1430" height="1620" alt="전기차 flow_v0 1" src="https://github.com/user-attachments/assets/8cc3e596-561b-433d-b1c5-34f542f89266" />
+<img width="1430*0.75" height="1620*0.75" alt="전기차 flow_v0 1" src="https://github.com/user-attachments/assets/8cc3e596-561b-433d-b1c5-34f542f89266" />
 
 ### Workflow 설명
 
