@@ -1,0 +1,191 @@
+# ============================================
+# 🔒 보안 - API 키 및 민감한 정보
+# ============================================
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.yaml
+config/secrets.yaml
+
+# config.yaml에 API 키를 직접 입력한 경우 주석 해제
+# config/config.yaml
+
+# ============================================
+# 🐍 Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================
+# 🌐 Virtual Environment
+# ============================================
+venv/
+env/
+ENV/
+.venv
+.venv/
+env.bak/
+venv.bak/
+
+# ============================================
+# 💻 IDE 및 편집기
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# 📊 데이터 파일 (원본 및 처리된 데이터)
+# ============================================
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# CSV, Excel 등 대용량 데이터
+*.csv
+*.xlsx
+*.xls
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# 📄 출력 파일 (리포트 및 로그)
+# ============================================
+outputs/reports/*
+outputs/logs/*
+!outputs/reports/.gitkeep
+!outputs/logs/.gitkeep
+
+# 생성된 리포트 및 로그
+*.log
+*.md.backup
+*.txt.backup
+
+# ============================================
+# 🖥️ OS 관련
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# 📓 Jupyter Notebook
+# ============================================
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# ============================================
+# 🧪 테스트 및 커버리지
+# ============================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ============================================
+# 🔧 빌드 및 배포
+# ============================================
+*.manifest
+*.spec
+
+# ============================================
+# 📦 캐시 및 임시 파일
+# ============================================
+*.cache
+.cache/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ============================================
+# 🔍 기타
+# ============================================
+# PyCharm
+.idea/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# Backup files
+*.backup
+*~
+
