@@ -451,7 +451,10 @@ class PDFGenerator:
         return table
     
     def _process_inline_markdown(self, text: str) -> str:
-        """인라인 마크다운 처리 (bold, italic 등)"""
+        """인라인 마크다운 처리 (bold, italic, small 등)"""
+        # <small> -> <font size="8"> (작은 글씨)
+        text = re.sub(r'<small>(.*?)</small>', r'<font size="8">\1</font>', text, flags=re.DOTALL)
+        
         # **bold** -> <b>bold</b>
         text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text)
         
