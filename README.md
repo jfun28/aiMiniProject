@@ -23,9 +23,11 @@ LangGraph 기반의 Fan-out/Fan-in 패턴을 사용한 전기차 시장 종합 �
 ## 🏗️ 아키텍처
 
 ```
-[시작] 
+[시작]
+ ↓
+[사용자 프롬프트:2024년도 전기차 시장 현황과 정책, 현재 소비자 여론 조사하는 보고서 작성해]
   ↓
-[Decision: LLM이 필요한 에이전트 선택]
+[Decision: Supervisor Agent가 필요한 에이전트 선택]
   ↓
 [Fan-Out: 선택된 에이전트만 병렬 실행]
   ↓
@@ -37,6 +39,9 @@ LangGraph 기반의 Fan-out/Fan-in 패턴을 사용한 전기차 시장 종합 �
   ↓
 [종료]
 ```
+
+![alt text](<전기차 flow_v2.0.png>)
+
 ## 에이전트 구성
 
 ### 1. 🗳️ Survey Agent (여론조사)
@@ -188,9 +193,6 @@ aiMiniProject2/
     ├── reports/                    # 생성된 보고서 (PDF, MD)
     └── logs/                       # 실행 로그
 ```
-## Architecture
-
-![alt text](<전기차 flow_v2.0.png>)
 
 
 ## Contributors 

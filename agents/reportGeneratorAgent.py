@@ -102,13 +102,17 @@ class ReportGeneratorAgent:
 
             print(f"   ✓ 4개 에이전트 결과 수집 완료 (웹 참고문헌: {len(unique_sources)}개)")
 
-            # 2. LLM을 통한 종합 보고서 작성
+            # 2. Sources 리스트를 번호 매긴 텍스트로 변환
+            sources_list_text = self._format_sources_for_llm(unique_sources)
+
+            # 3. LLM을 통한 종합 보고서 작성
             print(f"   🤖 LLM 종합 분석 중...")
 
             prompt = ChatPromptTemplate.from_template(REPORT_GENERATOR_PROMPT)
             chain = prompt | self.llm
 
             response = chain.invoke({
+                "sources_list": sources_list_text,
                 "survey_result": survey_result,
                 "market_result": market_result,
                 "policy_result": policy_result,
@@ -792,6 +796,27 @@ class ReportGeneratorAgent:
             else:
                 lines.append(f"**{key}**: {value}")
         return "\n".join(lines)
+
+    def _format_sources_for_llm(self, sources: list) -> str:
+        """LLM에게 전달할 sources 리스트를 포맷팅"""
+        if not sources:
+            return "수집된 웹 문서가 없습니다."
+        
+        formatted = []
+        for idx, source in enumerate(sources, 1):
+            title = source.get("title", "제목 없음")
+            url = source.get("url", "")
+            snippet = source.get("snippet", "")
+            
+            formatted.append(f"[{idx}] {title}")
+            formatted.append(f"    URL: {url}")
+            if snippet:
+                # snippet이 너무 길면 잘라서 표시
+                snippet_preview = snippet[:200] + "..." if len(snippet) > 200 else snippet
+                formatted.append(f"    내용: {snippet_preview}")
+            formatted.append("")  # 빈 줄 추가
+        
+        return "\n".join(formatted)
 
     def _build_references_section(self, sources: list) -> str:
         """References 섹션 생성 - 간결한 참고 문서 형식 (작은 글씨)"""
